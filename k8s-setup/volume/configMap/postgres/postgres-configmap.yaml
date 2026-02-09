@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-demo-cm
+data:
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: "vuthy123"
+  WHATEVER_USER: "whatever_user"

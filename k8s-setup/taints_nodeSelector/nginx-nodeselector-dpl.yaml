@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-nodeselector-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: nginx-nodeselector-app
+  template:
+    metadata:
+      labels:
+        app: nginx-nodeselector-app
+    spec:
+      nodeSelector:
+        disktype: ssd
+      containers:
+      - name: nginx-nodeselector-app
+        image: nginx:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
