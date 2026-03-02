@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-demo-cm 
+
+
+# It's easier to keep the key that same as variable needed for the services 
+data:
+  POSTGRES_USER: admin_user 
+ ## POSTGRES_PASSWORD: "secured_pass123"
+  WHATEVER_USER: "whatever_user"
